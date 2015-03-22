@@ -15,13 +15,6 @@ var current = 0, i = 0, i2 = 0;
 var currentid = 100;
 while (addmore === "yes") { //noprotect
   var input = prompt("Give me a worry of yours:");
-  //var image = new Image;
-  //image.src = "http://i.imgur.com/UbD4sbZ.png";
-  //image.id = "hello";
-  //image.height = 150; 
-  //image.width = 150;
-  //image.style.top= 80 + (150*i);
-  //image.style.right= 80 + (150*i2);
   var bubble = canvas.image("http://i.imgur.com/UbD4sbZ.png", 10 + 150*i, 10 + 150*i2, 150, 150);
   window.canvas = canvas;
   var maketext = canvas.text(80 + 150*i, 80 + 150*i2, input);
@@ -36,19 +29,11 @@ while (addmore === "yes") { //noprotect
   } else {
     addmore = "no";
   }
-  //image.click(pop);
 }
 
 $(function() {
   $(document).on('click', 'image', genericPop);
 });
-
-
-function pop() {
-    if (document.getElementById('hello').src !== "http://i.imgur.com/f8deEVF.gif") {
-      document.getElementById('hello').src = "http://i.imgur.com/f8deEVF.gif";
-    }
-}
 
 function genericPop() {
   var element = $(this);
@@ -56,6 +41,7 @@ function genericPop() {
       element.attr('href', "http://i.imgur.com/f8deEVF.gif");
       setTimeout(function (){
         element.remove();
+        element.next.remove();
       }, 500);
   }
 }
