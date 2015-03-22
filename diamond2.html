@@ -22,7 +22,8 @@ while (addmore === "yes") { //noprotect
   image.width = 150;
   image.style.top= 80 + (150*i);
   image.style.right= 80 + (150*i2);
-  canvas.appendChild(image);
+  document.body.appendChild(image);
+  window.canvas = canvas;
   var maketext = canvas.text(80 + 150*i, 80 + 150*i2, input);
   current++;
   i++;
