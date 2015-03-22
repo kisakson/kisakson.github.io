@@ -22,7 +22,7 @@ while (addmore === "yes") { //noprotect
   image.width = 150;
   image.style.top= 80 + (150*i);
   image.style.right= 80 + (150*i2);
-  document.body.appendChild(image);
+  canvas.appendChild(image);
   var maketext = canvas.text(80 + 150*i, 80 + 150*i2, input);
   current++;
   i++;
@@ -49,8 +49,10 @@ function pop() {
     }
 }
 
-function genericPop(el) {
-  $(el).remove();
+function genericPop() {
+  if ($(this).attr('src') !== "http://i.imgur.com/f8deEVF.gif") {
+      $(this).attr('src', "http://i.imgur.com/f8deEVF.gif");
+    }
 }
 </script>
  
