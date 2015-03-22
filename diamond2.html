@@ -28,8 +28,9 @@ while (addmore === "yes") { //noprotect
     i = 0;
     i2++;
   }
-  addmore = prompt("Do you have another worry? ('yes' or no)");
-  if (current > 8) {
+  if (current < 9) {
+    addmore = prompt("Do you have another worry? ('yes' if so)");
+  } else {
     addmore = "no";
   }
   image.click(pop);
