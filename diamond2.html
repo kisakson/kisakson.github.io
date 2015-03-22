@@ -14,9 +14,11 @@ var worries = [];
 var current = 0, i = 0, i2 = 0;
 while (addmore === "yes") { //noprotect
   var input = prompt("Give me a worry of yours:");
-   <img src="http://imgur.com/UbD4sbZ"  style="position:absolute; left: 80 + 150*i; top: 80 + 150*i2; width: 70;      height: 70;"/>
- //var makecircle = canvas.circle(80 + 150*i, 80 + 150*i2, 70);
-  //makecircle.attr("fill", "#B8D7F1");
+  var image = new Image;
+  image.src = "http://imgur.com/UbD4sbZ";
+  document.body.appendChild(image);
+  //<img src="http://imgur.com/UbD4sbZ" style="position:absolute left: 80 + 150*i; top: 80 + 150*i2; width: 70;  height: 70;"/>
+ 
   var maketext = canvas.text(80 + 150*i, 80 + 150*i2, input);
   current++;
   i++;
