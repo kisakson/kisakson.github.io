@@ -16,6 +16,10 @@ while (addmore === "yes") { //noprotect
   var input = prompt("Give me a worry of yours:");
   var image = new Image;
   image.src = "http://i.imgur.com/UbD4sbZ.png";
+  image.height = 70; 
+  image.width = 70;
+  image.style.top=80+150*i;
+  image.style.right=80+150*i2;
   document.body.appendChild(image);
   //<img src="http://imgur.com/UbD4sbZ" style="position:absolute left: 80 + 150*i; top: 80 + 150*i2; width: 70;  height: 70;"/>
  
