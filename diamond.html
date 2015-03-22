@@ -9,30 +9,38 @@
  
 <script id="jsbin-javascript">
 var canvas = Raphael(0, 0, 500, 500);
+var addmore = "yes";
+var worries = [];
+var current = 0, i = 0, i2 = 0;
 
-for (var i = 0; i < 5; i++) {
-  for (var i2 = 0; i2 < 5; i2++) {
-    var topcircle = canvas.circle(50 + 80*i, 50 + 80*i2, 30);
-    topcircle.attr("fill", "pink");
-    topcircle.click(diamond);
+while (addmore === "yes") { //noprotect
+  var input = prompt("Give me a worry of yours:");
+  var makecircle = canvas.circle(80 + 150*i, 80 + 150*i2, 70);
+  makecircle.attr("fill", "#B8D7F1");
+  var maketext = canvas.text(80 + 150*i, 80 + 150*i2, input);
+  current++;
+  i++;
+  if (i === 3) {
+    i = 0;
+    i2++;
   }
+  addmore = prompt("Do you have another worry? ('yes' or no)");
+  if (current > 8) {
+    addmore = "no";
+  }
+  makecircle.click(pop);
 }
 
-
-function pearl() {
-  this.remove();
-  var x = Math.floor((Math.random() * 400) + 1);
-  var y = Math.floor((Math.random() * 400) + 1);
-  var newcircle = canvas.circle(x, y, 30);
-  newcircle.attr("fill", "pink");
-  newcircle.click(pearl);
-}
 
 function diamond() {
   var x = Math.floor((Math.random() * 400) + 1);
-  var y = Math.floor((Math.random() * 400) + 1)
+  var y = Math.floor((Math.random() * 400) + 1);
   var animateCircle = Raphael.animation({cx:x, cy:y}, 1000, "bounce");
   this.animate(animateCircle);
+}
+
+function pop() {
+  this.remove();
 }
 </script>
  
