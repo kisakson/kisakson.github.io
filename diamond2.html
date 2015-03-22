@@ -9,7 +9,6 @@
 <body>
  
 <script id="jsbin-javascript">
-var canvas = Raphael(0, 0, 500, 500);
 var addmore = "yes";
 var current = 0, i = 0, i2 = 0;
 var currentid = 100;
@@ -39,7 +38,7 @@ while (addmore === "yes") { //noprotect
 }
 
 $(function() {
-  $(document).click('img', genericPop);
+  $(document).on('click', 'img', genericPop);
 });
 
 
