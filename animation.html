@@ -8,7 +8,9 @@
 
 <script>
 function changeImage() {
-    document.getElementById('myImage').src = "http://i.imgur.com/f8deEVF.gif";
+    if (document.getElementById('myImage').src !== "http://i.imgur.com/f8deEVF.gif") {
+      document.getElementById('myImage').src = "http://i.imgur.com/f8deEVF.gif";
+    }
 }
   
 </script>
