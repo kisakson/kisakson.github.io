@@ -4,23 +4,17 @@
 
 <script>
     var number = prompt("How many bubbles do you want?");
-    var current = 0, currentID = 100;
-    for (current = 0; current < number; current++) {
-        var image = new Image;
-        image.src = "http://i.imgur.com/UbD4sbZ.png";
-        image.id = currentID;
-        image.height = 150; 
-        image.width = 150;
-        image.style.top= 80 + (150*i);
-        image.style.right= 80 + (150*i2);
-        document.body.appendChild(image);
-        image.click(changeImage(currentID));
-        currentID++;
-    }
+</script>
 
-function changeImage(ID) {
-    if (document.getElementById(ID).src !== "http://i.imgur.com/f8deEVF.gif") {
-      document.getElementById(ID).src = "http://i.imgur.com/f8deEVF.gif";
+<img id="myImage1" onclick="changeImage()" src="http://i.imgur.com/UbD4sbZ.png" width="180" height="180">
+<img id="myImage2" onclick="changeImage()" src="http://i.imgur.com/UbD4sbZ.png" width="180" height="180">
+<img id="myImage3" onclick="changeImage()" src="http://i.imgur.com/UbD4sbZ.png" width="180" height="180">
+    
+<script>
+
+function changeImage() {
+    if (document.getElementById(this.id).src !== "http://i.imgur.com/f8deEVF.gif") {
+      document.getElementById(this.id).src = "http://i.imgur.com/f8deEVF.gif";
     }
 }
   
