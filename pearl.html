@@ -1,0 +1,73 @@
+<!-- html commenting style :) -->
+
+<html>
+  <head>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <title> Afternoon Teatime </title>
+    
+    <style> 
+    
+    #nav3 {
+		padding: 5px; 
+        margin: 10px;
+        font: 30pt century gothic; 
+        left: 0px; 
+        width: 166px;
+    } 
+    
+    #image {
+       position: absolute;
+       left: 300px;
+	   opacity: 1;
+    }
+	
+	#image:hover {
+		opacity: 0.5;
+	}
+    </style> 
+    
+  </head>
+  
+  <body style = "background-color: #e5daf1;">
+
+    
+    <div id = "nav3">
+	hhhh<br>
+    <img src = "">
+	<br><br>
+		<form>
+			What topics are concerning you?
+			<input type="text" name="thoughts"> <br>
+			<input type="submit" value="Tell me your thoughts.">
+		</form>
+    </div>
+	
+	<div id = "image">
+		<body background = "http://ets.berkeley.edu/sites/default/files/images/harbour_sunset_wallpaper.jpg">   
+    </div>
+	
+	<script>
+		var canvas = Raphael(0, 0, 500, 500);
+
+		for (var i = 0; i < 5; i++) {
+			for (var i2 = 0; i2 < 5; i2++) {
+				var topcircle = canvas.circle(50 + 80*i, 50 + 80*i2, 30);
+				topcircle.attr("fill", "pink");
+				topcircle.click(diamond);
+			
+		}
+
+		function diamond() {
+			var x = Math.floor((Math.random() * 400) + 1);
+			var y = Math.floor((Math.random() * 400) + 1)
+			var animateCircle = Raphael.animation({cx:x, cy:y}, 1000, "bounce");
+			this.animate(animateCircle);
+		}
+	</script>
+	
+	<footer>
+  
+    </footer>
+  </body>
+  
+</html>
