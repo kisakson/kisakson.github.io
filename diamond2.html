@@ -21,8 +21,6 @@ while (addmore === "yes") { //noprotect
   image.style.top=80+150*i;
   image.style.right=80+150*i2;
   document.body.appendChild(image);
-  //<img src="http://imgur.com/UbD4sbZ" style="position:absolute left: 80 + 150*i; top: 80 + 150*i2; width: 70;  height: 70;"/>
- 
   var maketext = canvas.text(80 + 150*i, 80 + 150*i2, input);
   current++;
   i++;
@@ -34,7 +32,7 @@ while (addmore === "yes") { //noprotect
   if (current > 8) {
     addmore = "no";
   }
-  makecircle.click(pop);
+  image.click(pop);
 }
 function diamond() {
   var x = Math.floor((Math.random() * 400) + 1);
