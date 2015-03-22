@@ -11,15 +11,16 @@
 var canvas = Raphael(0, 0, 500, 500);
 var addmore = "yes";
 var current = 0, i = 0, i2 = 0;
+var currentid = 100;
 while (addmore === "yes") { //noprotect
   var input = prompt("Give me a worry of yours:");
   var image = new Image;
   image.src = "http://i.imgur.com/UbD4sbZ.png";
-  image.id = "myImage";
+  image.id = currentid;
   image.height = 150; 
   image.width = 150;
-  image.style.top=80 + (150*i);
-  image.style.right=80 + (150*i2);
+  image.style.top= 80 + (150*i);
+  image.style.right= 80 + (150*i2);
   document.body.appendChild(image);
   var maketext = canvas.text(80 + 150*i, 80 + 150*i2, input);
   current++;
@@ -34,12 +35,13 @@ while (addmore === "yes") { //noprotect
     addmore = "no";
   }
   image.click(pop);
+  currentid++;
 }
 
 
 function pop() {
-    if (document.getElementById('myImage').src !== "http://i.imgur.com/f8deEVF.gif") {
-      document.getElementById('myImage').src = "http://i.imgur.com/f8deEVF.gif";
+    if (document.getElementById(currentid).src !== "http://i.imgur.com/f8deEVF.gif") {
+      document.getElementById(currentid).src = "http://i.imgur.com/f8deEVF.gif";
     }
 }
 </script>
