@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
   <meta charset="utf-8">
   <title>JS Bin</title>
@@ -34,14 +35,22 @@ while (addmore === "yes") { //noprotect
   } else {
     addmore = "no";
   }
-  image.click(pop);
+  //image.click(pop);
 }
+
+$(function() {
+  $('img').click(genericPop);
+});
 
 
 function pop() {
     if (document.getElementById('hello').src !== "http://i.imgur.com/f8deEVF.gif") {
       document.getElementById('hello').src = "http://i.imgur.com/f8deEVF.gif";
     }
+}
+
+function genericPop(el) {
+  $(el).remove();
 }
 </script>
  
