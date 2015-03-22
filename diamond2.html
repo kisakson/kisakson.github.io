@@ -22,7 +22,7 @@ while (addmore === "yes") { //noprotect
   //image.width = 150;
   //image.style.top= 80 + (150*i);
   //image.style.right= 80 + (150*i2);
-  var bubble = canvas.image("http://i.imgur.com/UbD4sbZ.png", 10, 10, 150, 150);
+  var bubble = canvas.image("http://i.imgur.com/UbD4sbZ.png", 10 + 150*i, 10 + 150*i2, 150, 150);
   window.canvas = canvas;
   var maketext = canvas.text(80 + 150*i, 80 + 150*i2, input);
   current++;
@@ -40,7 +40,7 @@ while (addmore === "yes") { //noprotect
 }
 
 $(function() {
-  $(document).on('click', 'img', genericPop);
+  $(document).on('click', 'image', genericPop);
 });
 
 
