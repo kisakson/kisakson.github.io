@@ -51,9 +51,13 @@ function pop() {
 }
 
 function genericPop() {
-  if ($(this).attr('href') !== "http://i.imgur.com/f8deEVF.gif") {
-      $(this).attr('href', "http://i.imgur.com/f8deEVF.gif");
-    }
+  var element = $(this);
+  if (element.attr('href') !== "http://i.imgur.com/f8deEVF.gif") {
+      element.attr('href', "http://i.imgur.com/f8deEVF.gif");
+      setTimeout(function (){
+        element.remove();
+      }, 500);
+  }
 }
 </script>
  
