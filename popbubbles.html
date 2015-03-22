@@ -1,0 +1,64 @@
+html>
+<head>
+<title>Pop your problems!</title>
+<style type="text/css">
+body {
+ margin: 0px;
+ padding: 0px;
+ background-image: url('http://i58.tinypic.com/nflgsh.png');
+}
+
+#fooObject {
+ position:absolute;
+ left:500px;
+ top: 250px;
+}
+
+
+</style>
+<script type="text/javascript">
+var foo = null;
+var anxdep = Math.floor(Math.random() * 2);
+function doMove() {
+  if (anxdep == 0) {
+     foo.style.left = parseInt(foo.style.left)+1+'px';
+     setTimeout(doMove,20); // call doMove in 20msec
+  } else {
+     var direction = Math.floor(Math.random() * 4) ;
+     
+     if (direction == 0) {
+         foo.style.left = parseInt(foo.style.left)+1+'px';
+     } else if (direction == 1) {
+         foo.style.top = parseInt(foo.style.top)+1+'px';
+     } else if (direction == 2) {
+         foo.style.left = parseInt(foo.style.left)-1+'px';
+     } else {
+         foo.style.top = parseInt(foo.style.top)-1+'px';
+     }
+     
+     setTimeout(doMove,5);
+  }
+}
+function init() {
+  foo = document.getElementById('fooObject'); // get the "foo" object
+  foo.style.left = '500px'; // set its initial position to 0px
+  foo.style.top = '250px';
+  doMove(); // start animating
+}
+function pop() {
+    if (document.getElementById('image').src !== "http://i.imgur.com/f8deEVF.gif") {
+      document.getElementById('image').src = "http://i.imgur.com/f8deEVF.gif";
+    }
+}
+window.onload = init;
+</script>
+</head>
+
+<body>
+
+<div id="fooObject">
+ <img id = "image" onclick="pop()" src="http://i.imgur.com/UbD4sbZ.png" width="180" height="180">
+</div> 
+
+</body>
+</html>
