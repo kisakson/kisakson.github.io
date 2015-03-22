@@ -24,8 +24,9 @@ while (addmore === "yes") { //noprotect
     i = 0;
     i2++;
   }
-  addmore = prompt("Do you have another worry? ('yes' or no)");
-  if (current > 8) {
+  if (current < 9) {
+    addmore = prompt("Do you have another worry? ('yes' if so)");
+  } else {
     addmore = "no";
   }
   makecircle.click(pop);
@@ -40,7 +41,7 @@ function diamond() {
 }
 
 function pop() {
-  this.remove();
+  this.src = "http://file1.answcdn.com/answ-cld/image/facebook/w_60,h_60,c_fill,g_face:center,q_60,f_jpg,d_default-user.jpg/adam.j.seidl.png";
 }
 </script>
  
