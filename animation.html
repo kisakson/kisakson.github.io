@@ -13,8 +13,8 @@
 <script>
 
 function changeImage() {
-    if (document.getElementById(this.id).src !== "http://i.imgur.com/f8deEVF.gif") {
-      document.getElementById(this.id).src = "http://i.imgur.com/f8deEVF.gif";
+    if (document.getElementById(this.getAttribute('id')).src !== "http://i.imgur.com/f8deEVF.gif") {
+      document.getElementById(this.getAttribute('id')).src = "http://i.imgur.com/f8deEVF.gif";
     }
 }
   
