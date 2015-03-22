@@ -10,7 +10,6 @@
 <script id="jsbin-javascript">
 var canvas = Raphael(0, 0, 500, 500);
 var addmore = "yes";
-var worries = [];
 var current = 0, i = 0, i2 = 0;
 while (addmore === "yes") { //noprotect
   var input = prompt("Give me a worry of yours:");
@@ -35,14 +34,12 @@ while (addmore === "yes") { //noprotect
   }
   image.click(pop);
 }
-function diamond() {
-  var x = Math.floor((Math.random() * 400) + 1);
-  var y = Math.floor((Math.random() * 400) + 1);
-  var animateCircle = Raphael.animation({cx:x, cy:y}, 1000, "bounce");
-  this.animate(animateCircle);
-}
+
+
 function pop() {
-  this.remove();
+    if (document.getElementById('image').src !== "http://i.imgur.com/f8deEVF.gif") {
+      document.getElementById('image').src = "http://i.imgur.com/f8deEVF.gif";
+    }
 }
 </script>
  
